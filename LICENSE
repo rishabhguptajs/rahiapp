@@ -1,0 +1,69 @@
+ISC License with Restrictions
+
+Copyright (c) 2024 Rahi
+
+RESTRICTED RIGHTS AND USAGE LIMITATIONS:
+
+1. NON-COMMERCIAL USE ONLY:
+   This software and its associated documentation, source code, and materials 
+   (collectively, the "Software") are strictly prohibited from being used for any 
+   commercial, business, or profit-generating purposes. This includes, but is not 
+   limited to:
+   a) Integration into commercial products or services
+   b) Use in business operations
+   c) Resale or commercial distribution
+   d) Commercial hosting or deployment
+   e) Any use that generates direct or indirect revenue
+
+2. REPRODUCTION AND MODIFICATION RESTRICTIONS:
+   Any reproduction, modification, or distribution of this Software, in whole or in 
+   part, is strictly prohibited without explicit written permission from the copyright 
+   holders. This includes but is not limited to:
+   a) Creating derivative works
+   b) Forking the repository for non-educational purposes
+   c) Rebranding or repurposing the Software
+   d) Copying of features, designs, or implementation logic
+
+3. PERMITTED USES:
+   The Software may only be used for:
+   a) Personal, non-commercial learning and education
+   b) Academic research with proper attribution
+   c) Non-profit educational institutions with written permission
+
+4. ATTRIBUTION AND INTELLECTUAL PROPERTY:
+   All copyright notices, trademarks, and attributions must remain intact and 
+   unmodified. The Rahi name, logo, branding, and associated intellectual property 
+   are protected and may not be used without explicit written permission.
+
+DISCLAIMER OF WARRANTY AND LIMITATION OF LIABILITY:
+
+THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+PERFORMANCE OF THIS SOFTWARE.
+
+Additional Terms:
+
+1. Data Privacy and Security:
+   Any permitted use must maintain all privacy and security measures implemented
+   in the original Software regarding user data handling and protection.
+
+2. Third-Party Components:
+   This license applies only to the Rahi software components. Third-party libraries
+   and components included in this Software are governed by their respective licenses.
+
+3. Contributions:
+   By contributing to this project, contributors acknowledge and agree that their
+   contributions will be subject to these same license terms and restrictions.
+
+4. Enforcement:
+   Any violation of these terms will be subject to legal action and maximum
+   enforcement under applicable laws.
+
+For licensing inquiries, permissions, or reporting violations, please contact:
+app@rahiapp.tech or rishabhgupta4523@gmail.com
+
+THIS LICENSE SUPERSEDES ALL PRIOR LICENSE VERSIONS AND AGREEMENTS RELATED TO THE SOFTWARE.
