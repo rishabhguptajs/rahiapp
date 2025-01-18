@@ -1,0 +1,7 @@
+@tailwind base; /* Base styles for the application */
+@tailwind components; /* Component styles for reusable UI elements */
+@tailwind utilities; /* Utility classes for quick styling */
+
+html {
+  scroll-behavior: smooth; /* Enables smooth scrolling for anchor links */
+}
