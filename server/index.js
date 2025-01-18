@@ -13,6 +13,7 @@
  * @requires ./routes/userRoutes.js
  * @requires ./routes/hotelRoutes.js
  * @requires express-rate-limit
+ * @requires morgan
  */
 
 import express from 'express';
@@ -27,6 +28,7 @@ import placeRoutes from './routes/placeRoutes.js';
 import userRoutes from './routes/userRoutes.js';
 import hotelRoutes from './routes/hotelRoutes.js';
 import rateLimit from 'express-rate-limit';
+import morgan from 'morgan';
 
 // Load environment variables
 dotenv.config();
@@ -48,6 +50,7 @@ const limiter = rateLimit({
 app.use(limiter);
 app.use(cors()); // Enable CORS
 app.use(express.json()); // Parse JSON request bodies
+app.use(morgan('combined')); // Log HTTP requests
 
 // Default route for testing
 app.get('/', (req, res) => {
