@@ -110,6 +110,7 @@ Our team is committed to helping new contributors. Feel free to reach out to our
 
 - **Rishabh Gupta** - [LinkedIn](https://www.linkedin.com/in/rishabhguptajs)
 - **Pulkit Kumar** - [LinkedIn](https://www.linkedin.com/in/pulkit-kumar-199534201/)
+- **Navya Bijoy** - [LinkedIn](https://www.linkedin.com/in/navya-bijoy-883a35249/)
 
 ## 📄 License
 
