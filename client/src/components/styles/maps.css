@@ -1,0 +1,60 @@
+/* public/markers.css */
+.start-marker {
+    width: 20px;
+    height: 20px;
+    background-color: #FF0000; /* Red for start */
+    border-radius: 50%;
+    border: 2px solid #FFFFFF; /* White border */
+  }
+  
+  .end-marker {
+    width: 20px;
+    height: 20px;
+    background-color: #00FF00; /* Green for end */
+    border-radius: 50%;
+    border: 2px solid #FFFFFF; /* White border */
+  }
+
+  /* styles/maps.css */
+
+.search-bar {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  background-color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.search-bar form {
+  display: flex;
+  align-items: center;
+}
+
+.search-bar input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+  width: 250px;
+  margin-right: 10px;
+}
+
+.search-bar button {
+  padding: 8px 16px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.search-bar button:hover {
+  background-color: #45a049;
+}
+
+  
