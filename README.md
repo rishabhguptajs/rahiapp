@@ -147,7 +147,6 @@ If you find any bugs or have feature requests, please create an issue in the [Is
 
 - Thanks to all contributors who have helped shape Rahi
 - Special thanks to our early adopters and testers
-- Built with support from various open-source communities
 
 ---
 
