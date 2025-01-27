@@ -154,7 +154,9 @@ export default function HomePage() {
 
     const tripData = {
       ...formData,
-      interests: formData.interests.split(",").map((interest) => interest.trim()),
+      interests: formData.interests
+        .split(",")
+        .map((interest) => interest.trim()),
       userId: user.id,
     };
 
@@ -163,7 +165,7 @@ export default function HomePage() {
         `${process.env.NEXT_PUBLIC_SERVER_URL}/users/create-trip`,
         tripData
       );
-      console.log(response)
+      console.log(response);
 
       if (response.data && response.data.tripId) {
         router.push(`/trip/${response.data.tripId}`);
@@ -179,7 +181,10 @@ export default function HomePage() {
   };
 
   return (
-    <section className="min-h-screen bg-gradient-to-br from-blue-50 to-orange-50 flex items-center justify-center p-4" id="generate-trip">
+    <section
+      className="min-h-screen bg-gradient-to-br from-blue-50 to-orange-50 flex items-center justify-center p-4"
+      id="generate-trip"
+    >
       <div className="w-full max-w-7xl bg-white rounded-3xl shadow-2xl overflow-hidden">
         <form onSubmit={handleSubmit} className="flex flex-col lg:flex-row">
           <div className="relative w-full lg:w-1/2 h-64 md:h-80 lg:h-auto">
@@ -216,7 +221,9 @@ export default function HomePage() {
                     value={formData.location}
                     onChange={handleLocationChange}
                     className={`w-full p-3 md:p-4 border rounded-lg focus:outline-none focus:ring-2 transition ${
-                      isLocationValid ? 'border-green-500 focus:ring-green-300' : 'border-gray-300 focus:ring-orange-300'
+                      isLocationValid
+                        ? "border-green-500 focus:ring-green-300"
+                        : "border-gray-300 focus:ring-orange-300"
                     }`}
                   />
                   {/* Autocomplete dropdown */}
@@ -225,7 +232,9 @@ export default function HomePage() {
                       {autocompleteResults.map((result, index) => (
                         <li
                           key={index}
-                          onClick={() => handleAutocompleteSelect(result.description)}
+                          onClick={() =>
+                            handleAutocompleteSelect(result.description)
+                          }
                           className="p-2 text-sm hover:bg-orange-100 cursor-pointer truncate"
                         >
                           {result.description}
@@ -261,6 +270,7 @@ export default function HomePage() {
                   value={formData.startDate}
                   onChange={handleInputChange}
                   className="w-full p-3 md:p-4 border rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-300 transition"
+                  min={new Date().toISOString().split("T")[0]}
                 />
                 <input
                   required
@@ -270,7 +280,9 @@ export default function HomePage() {
                   value={formData.totalBudget}
                   onChange={handleInputChange}
                   className={`w-full p-3 md:p-4 border rounded-lg focus:outline-none focus:ring-2 transition ${
-                    isBudgetValid ? 'border-gray-300 focus:ring-orange-300' : 'border-red-500 focus:ring-red-300'
+                    isBudgetValid
+                      ? "border-gray-300 focus:ring-orange-300"
+                      : "border-red-500 focus:ring-red-300"
                   }`}
                 />
               </div>
@@ -306,9 +318,13 @@ export default function HomePage() {
                   <button
                     type="submit"
                     className={`text-white text-sm px-6 py-3 rounded-lg bg-orange-500 hover:bg-orange-600 transition ${
-                      isSubmitting || !isLocationValid || !isBudgetValid ? "opacity-50 cursor-not-allowed" : ""
+                      isSubmitting || !isLocationValid || !isBudgetValid
+                        ? "opacity-50 cursor-not-allowed"
+                        : ""
                     }`}
-                    disabled={isSubmitting || !isLocationValid || !isBudgetValid}
+                    disabled={
+                      isSubmitting || !isLocationValid || !isBudgetValid
+                    }
                   >
                     {isSubmitting ? "Planning..." : "Plan Your Trip"}
                   </button>
