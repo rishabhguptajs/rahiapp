@@ -1,5 +1,7 @@
 import express from 'express';
-import { createTrip, createUser, getUserDetails, getUserTripDetails, updateUserPreferences, deleteTrip, addActivityToTrip, getTripDetails } from '../controllers/userController.js';
+import { createTrip, createUser, getUserDetails, getUserTripDetails, updateUserPreferences, deleteTrip, addActivityToTrip, getTripDetails, updateImage } from '../controllers/userController.js';
+import multer from "multer"
+
 
 /**
  * @fileoverview User routes for handling user-related operations
@@ -9,6 +11,8 @@ import { createTrip, createUser, getUserDetails, getUserTripDetails, updateUserP
  */
 
 const router = express.Router();
+const upload = multer({storage: multer.memoryStorage()})
+
 
 /**
  * Route for creating a new user
@@ -81,5 +85,15 @@ router.get('/trip-details/:tripId', getUserTripDetails);
  * @param {Object} res - The response object
  */
 router.delete('/delete-trip/:tripId', deleteTrip);
+
+
+/**
+ * Route for updating user image
+ * @function
+ * @name /updateimage with post req .
+ * @param {Object} req - The request object
+ * @param {Object} res - The response object
+ */
+router.post("/updateimage", upload.single('image') ,updateImage)
 
 export default router;

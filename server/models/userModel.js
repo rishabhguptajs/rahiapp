@@ -12,6 +12,7 @@ import mongoose from "mongoose";
  * @typedef {Object} User
  * @property {string} userId - The unique identifier for the user
  * @property {string} email - The email address of the user
+ * @property {string} image - The profile picture url of the user 
  * @property {Object} preferences - User preferences for travel
  * @property {Object} preferences.budget - Budget preferences
  * @property {number} preferences.budget.min - Minimum budget
@@ -43,6 +44,7 @@ import mongoose from "mongoose";
 const userSchema = new mongoose.Schema({
     userId: { type: String, required: true },
     email: { type: String, required: true, unique: true },
+    image:{type: String},
     preferences: {
         budget: {
             min: { type: Number, required: true, default: 0 },
