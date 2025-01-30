@@ -2,6 +2,7 @@ import User from "../models/userModel.js";
 import Waitlist from "../models/waitlistModel.js";
 import Trip from "../models/tripModel.js";
 import generateTrip from "../helpers/tripGenerator.js";
+import { upload_on_cloudinary } from "../utils/cloudinary.utils.js";
 
 /**
  * Creates a new user in the system.
@@ -319,3 +320,52 @@ export const deleteTrip = async (req, res) => {
         res.status(500).json({ message: error.message });
     }
 }
+
+
+
+export const updateImage = async (req, res) => {
+    try {
+        // Check if userId is provided in the request params
+        const userId = req.body;
+        if (!userId) {
+            return res.status(400).json({ error: "User ID is required." });
+        }
+
+        // Check if a file is uploaded
+        const filebuffer = req.file ? req.file.buffer : null;
+        if (!filebuffer) {
+            return res.status(400).json({ error: "No image file uploaded." });
+        }
+
+        // Upload image to Cloudinary
+        const uploaded_url = await upload_on_cloudinary(filebuffer);
+        if (!uploaded_url) {
+            return res.status(500).json({ error: "Failed to upload image to Cloudinary." });
+        }
+
+        // Find the user by ID
+        const fetchedUser = await User.findById(userId);
+        if (!fetchedUser) {
+            return res.status(404).json({ error: "User not found." });
+        }
+
+        // Update the user's image URL
+        fetchedUser.image = uploaded_url;
+
+        // Save the updated user
+        await fetchedUser.save();
+
+        // Return success response
+        res.status(200).json({ message: "Image updated successfully.", imageUrl: uploaded_url });
+    } catch (error) {
+        console.error("Error updating image:", error);
+
+        // Handle specific errors
+        if (error.name === "CastError") {
+            return res.status(400).json({ error: "Invalid user ID format." });
+        }
+
+        // Generic error response
+        res.status(500).json({ error: "Internal server error." });
+    }
+};
